@@ -12,7 +12,8 @@
     "no-underscore-dangle": 0,
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
-    "arrow-body-style": ["error", "always"]
+    "arrow-body-style": ["error", "always"],
+    "spaced-comment": ["error", "always", { "exceptions": ["-", "+"] }]
   },
   "globals": {
     "window": true,
