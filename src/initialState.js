@@ -1,5 +1,6 @@
 export default {
   cart: [],
+  biyer: [],
   products: [
     {
       'id': '1',
