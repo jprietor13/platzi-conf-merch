@@ -1,15 +1,15 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import '../assets/styles/containers/Information.css';
 
 const Information = () => {
   const { state, addToBuyer } = useContext(AppContext);
-  const { form } = useRef(null); //para hacer referencia al formulario
+  const form = useRef(null); //para hacer referencia al formulario
   const { cart } = state;
 
   const handleSubmit = () => {
-    let formData = new FormData(form.current); //para leer la info de cada input
+    const formData = new FormData(form.current); //para leer la info de cada input
     const buyer = { //comprador
       'name': formData.get('name'),
       'email': formData.get('email'),
