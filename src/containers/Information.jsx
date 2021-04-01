@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import '../assets/styles/containers/Information.css';
 
@@ -7,6 +7,7 @@ const Information = () => {
   const { state, addToBuyer } = useContext(AppContext);
   const form = useRef(null); //para hacer referencia al formulario
   const { cart } = state;
+  const history = useHistory();
 
   const handleSubmit = () => {
     const formData = new FormData(form.current); //para leer la info de cada input
@@ -22,6 +23,7 @@ const Information = () => {
       'phone': formData.get('phone'),
     }
     addToBuyer(buyer); //pasamos la data que obtiene formdata mediante buyer
+    history.push('/checkout/payment');
   }
 
   return (
